@@ -6,6 +6,7 @@ import Policita from './rutas/Politica';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Syso from './rutas/Syso';
 import Space from './rutas/Space';
+import Page404 from './rutas/page404';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
       <Route path='/politica' element={<Policita />} />
       <Route path='/syso' element={<Syso />} />
       <Route path='/space' element={<Space />} />
+      <Route path='*' element={<Page404 />} />
       </Routes>
     </Router>
     

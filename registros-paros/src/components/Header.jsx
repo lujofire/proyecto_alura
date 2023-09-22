@@ -15,7 +15,7 @@ const Header = () => {
             </div>
             <nav className="menu-header">
                 <ul className="menu-items">
-                    <li><Link className="menu-item" to="/politica">POLÍTICA DE INOCUIDAD</Link></li>
+                    <li><Link className="menu-item" to="/politica">POLÍTICA INOCUIDAD</Link></li>
                     <li><Link className="menu-item" to="/syso">SYSO</Link></li>
                     <li><Link className="menu-item" to="/space">SPACE</Link></li>
                     

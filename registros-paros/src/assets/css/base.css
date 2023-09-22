@@ -36,18 +36,22 @@ body {
   height: 4.75rem;
   margin-top: 1.25rem;
   margin-bottom: 2rem;
-  padding-left: 2rem;
   justify-content: center;
 }
 
-@media (min-width: 800px) {
+@media (max-width: 860px) {
   .container {
     padding-right: 2.5rem;
     padding-left: 2.5rem;
   }
+
+  .title-page {
+    font-size: 1.90rem;
+  }
+
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 960px) {
   .container {
     padding-left: calc((100vw - 900px) / 2);
     padding-right: calc((100vw - 900px) / 2);

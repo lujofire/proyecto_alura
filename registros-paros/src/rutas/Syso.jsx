@@ -2,7 +2,7 @@ const Syso = () => {
     return (
       <main>
         <div className="container">
-          <h2 className="title-page">SYSO</h2>
+          <h2 className="title-page">Syso</h2>
         </div>
           
       </main>
