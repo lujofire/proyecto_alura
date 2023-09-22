@@ -9,43 +9,8 @@
   justify-content: space-evenly;
 }
 
-.menu-hamburguer {
-  width: 1.5rem;
-  height: 0.75rem;
-  transition: 0.2s;
-}
-
-.menu-hamburguer--active .menu-hamburguer__icon {
-  transform: rotate(90deg);
-  transition: 0.2s;
-}
-
-.menu-hamburguer__icon {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  background-image: url(../../img/menu.svg);
-  background-size: contain;
-  justify-content: space-between;
-  
-}
-
 .header__logo {
-  width: 20rem;
-}
-
-.header__title {
-  font-size: var(--font-logo);
-  margin-left: 0.5rem;
-}
-
-.menu-header-background {
-  background-color: #00000020;
-  position: fixed;
-  top: 0;
-  left: -100vw;
-  width: 100vw;
-  height: 100vh;
+  width: 18rem;
 }
 
 .menu-header {
@@ -63,25 +28,6 @@
  
 }
 
-.menu-header__fechar {
-  position: absolute;
-  right: -2.5rem;
-  top: 0.5rem;
-  color: var(--contrast-light-color);
-  padding: 1rem;
-  box-sizing: border-box;
-  border-radius: 50%;
-  background-color: var(--primary-color);
-}
-
-.menu-header__fechar::before {
-  content: "X";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .menu-item {
   display: block;
   padding-top: 1.5rem;
@@ -97,15 +43,6 @@
   border: none;
 }
 
-.menu-header--ativo {
-  left: 0;
-  top: 0;
-  transition: 0.25s;
-}
-
-.menu-header--ativo + .menu-header-background {
-  left: 0;
-}
 
 @media (min-width: 860px) {
   .header {
@@ -113,6 +50,7 @@
     height: 6.75rem;
     display: flex;
     justify-content: space-evenly;
+
   }
   .header__logo {
     width: 25rem;
@@ -120,10 +58,6 @@
 
   .header-container {
     grid-area: logo;
-  }
-
-  .menu-hamburguer {
-    display: none;
   }
 
   .menu-header {
@@ -134,9 +68,6 @@
     grid-area: menu;
   }
 
-  .menu-header__fechar {
-    display: none;
-  }
 
   .menu-header-background {
     display: none;
@@ -148,7 +79,7 @@
   }
 
   .menu-item {
-    border-width: 3px;
+    border-width: 3px; 
     padding: 0;
     margin-right: 1rem;
     font-weight: 1000;
@@ -157,9 +88,10 @@
   .menu-item:hover{
     border-color: #0c3c7a;;
   }
+}
 
-  .menu-item--entrar {
-    border-radius: 2rem;
-    padding: 1rem 1.5rem;
+@media (max-width: 400px) {
+  .header__logo {
+    width: 15rem;
   }
 }

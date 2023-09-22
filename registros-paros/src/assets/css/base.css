@@ -8,6 +8,7 @@ body {
 }
 
 .container {
+  position: relative;
   padding-right: 1rem;
   padding-left: 1rem;
 }
