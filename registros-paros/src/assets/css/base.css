@@ -1,6 +1,7 @@
 @import url(_reset.css);
 @import url(_variables.css);
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Prata&display=swap");
+
 body {
   background-color: var(--secundary-color);
   color: var(--contrast-dark-color);
@@ -13,13 +14,36 @@ body {
   padding-left: 1rem;
 }
 
+.img {
+  opacity: 0.3;
+}
+
+.reducir_imagen {
+  width: 20rem;
+}
+
+.reducir_imagen_home {
+  width: 35rem;
+}
+
+.reducir_imagen_home:hover {
+  transition: 1s;
+  transform: scale(1.1);
+}
+
 .flex {
   display: flex;
 }
 
 .flex--center {
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.flex--logo {
+  margin-top: 5rem;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .flex--column {
@@ -40,16 +64,71 @@ body {
   justify-content: center;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 650px) {
   .container {
     padding-right: 2.5rem;
     padding-left: 2.5rem;
   }
 
-  .title-page {
-    font-size: 1.90rem;
+  .img {
+    opacity: 0.3;
   }
 
+  .reducir_imagen {
+    width: 18rem;
+  }
+
+  .flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flex--center {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .flex--logo {
+    margin-top: 5rem ;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+  }
+
+  .reducir_imagen {
+    width: 13rem;
+  }
+}
+
+@media (max-width: 860px) {
+  .title-page {
+    font-size: 1.80rem;
+  }
+}
+
+@media (max-width: 410px) {
+  .title-page {
+    font-size: 1.50rem;
+  }
+}
+
+@media (max-width: 1250px) {
+  .reducir_imagen_home {
+    width: 23rem;
+  }
+}
+
+@media (max-width: 860px) {
+  .reducir_imagen_home {
+    width: 18rem;
+  }
 }
 
 @media (max-width: 960px) {

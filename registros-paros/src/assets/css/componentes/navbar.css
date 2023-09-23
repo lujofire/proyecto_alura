@@ -12,12 +12,13 @@ Sidebar navigation
 
 .navbar .toggle {
   position: fixed;
-  left: 30px;
+  left: 15px;
   top: 34px;
   cursor: pointer;
   background: transparent;
   border: none;
 }
+
 .menu-nav {
   list-style: none;
   position: relative;
@@ -35,36 +36,35 @@ Sidebar navigation
   /* transition: width ease 0.2s; */
 }
 
-
 .menu-nav.show-menu {
   width: 100%;
   transform: translateX(0px);
-  
 }
-.menu-nav li a, .menu-nav li span {
+
+.menu-nav li a,
+.menu-nav li span {
   display: block;
   padding: 1rem;
 }
 
-
 @media (min-width: 860px) {
-    .navbar .toggle {
-        display: none;
-      } 
-      
-    .menu-nav li a, .menu-nav li span {
-        display: none;
-    }
+  .navbar .toggle {
+    display: none;
+  }
 
+  .menu-nav li a,
+  .menu-nav li span {
+    display: none;
+  }
 }
 
 @media (max-width: 385px) {
-    .navbar .toggle {
-        position: fixed;
-        left: 10px;
-        top: 34px;
-        cursor: pointer;
-        background: transparent;;
-        border: none;
-    }
+  .navbar .toggle {
+    position: fixed;
+    left: 10px;
+    top: 34px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+  }
 }

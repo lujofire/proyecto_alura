@@ -9,6 +9,8 @@ import Syso from './rutas/Syso';
 import Space from './rutas/Space';
 import Page404 from './rutas/page404';
 import Navbar from './components/Navbar';
+import Sasson from './rutas/Sasson';
+import Cashitas from './rutas/Cashitas';
 
 function App() {
 
@@ -20,9 +22,12 @@ function App() {
       <Route path='/politica' element={<Policita />} />
       <Route path='/syso' element={<Syso />} />
       <Route path='/space' element={<Space />} />
+      <Route path='/sasson' element={<Sasson />} />
+      <Route path='/cashitas' element={<Cashitas />} />
       <Route path='*' element={<Page404 />} />
       </Routes>
       <Navbar />
+  
     </Router>
     
     
