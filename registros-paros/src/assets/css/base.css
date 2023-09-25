@@ -24,11 +24,18 @@ body {
 
 .reducir_imagen_home {
   width: 35rem;
+
 }
 
 .reducir_imagen_home:hover {
   transition: 1s;
   transform: scale(1.1);
+  
+}
+
+.logos:hover {
+  transform: scale(1.1);
+
 }
 
 .flex {

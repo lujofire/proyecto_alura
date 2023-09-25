@@ -21,7 +21,7 @@ Sidebar navigation
 
 .menu-nav {
   list-style: none;
-  position: relative;
+  position: fixed;
   background: #f8fbfd;
   left: 0;
   width: 0;

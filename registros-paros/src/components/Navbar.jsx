@@ -36,7 +36,7 @@ const Navbar = () => {
                     <MdClose 
                         style={{ 
                             width: '32px', 
-                            height: '32px' 
+                            height: '32px'
                         }} 
                     />) : (
                     <FiMenu

@@ -1,0 +1,30 @@
+{
+"categorias": [
+    {
+        "id": "uuid()",
+        "area": "FRASCOS",
+        "foto": ""
+        
+      },
+      {
+        "id": "uuid()",
+        "area": "SALSAS Y ADEREZOS",
+        "foto": ""
+      },
+      {
+        "id": "uuid()",
+        "area": "ACEITUNAS",
+        "foto": ""
+      },
+      { 
+        "id": "uuid()",
+        "area": "FAMENSAL",
+        "foto": ""
+      },
+      {
+        "id": "uuid()",
+        "area": "SOBRE RELLENO",
+        "foto": ""
+      }
+]
+}

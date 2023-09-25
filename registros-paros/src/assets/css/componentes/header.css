@@ -42,6 +42,13 @@
 
 }
 
+.menu-item:hover, .menu-item:active {
+  font-size: 110%;
+  color: #0c3c7a;
+  font-weight: 1000;
+
+}
+
 .menu-item--entrar {
   background-color: var(--primary-color);
   color: var(--contrast-light-color);
