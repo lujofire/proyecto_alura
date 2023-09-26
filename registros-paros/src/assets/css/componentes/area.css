@@ -49,11 +49,30 @@
     box-sizing: border-box;
     text-align: center;
     font-size: 32px;
-    position: relative;
 }
 
 .colaboradores{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+}
+
+.regresar{
+    width: 100px;
+    position: fixed;
+    margin-top: -3rem;
+    font-size: 47px;
+    transition: width 1s;
+    margin-right: -4rem;
+
+}
+
+.margen_flecha{
+    margin-right: 8rem;
+}
+
+.regresar:hover{
+    transform: scale(1.1);
+    width: 150px;
+    color: darkblue;
 }

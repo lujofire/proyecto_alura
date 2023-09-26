@@ -14,14 +14,6 @@ body {
   padding-left: 1rem;
 }
 
-.img {
-  opacity: 0.3;
-}
-
-.reducir_imagen {
-  width: 20rem;
-}
-
 .reducir_imagen_home {
   width: 35rem;
 
@@ -71,18 +63,11 @@ body {
   justify-content: center;
 }
 
+
 @media (max-width: 650px) {
   .container {
     padding-right: 2.5rem;
     padding-left: 2.5rem;
-  }
-
-  .img {
-    opacity: 0.3;
-  }
-
-  .reducir_imagen {
-    width: 18rem;
   }
 
   .flex {
@@ -107,10 +92,6 @@ body {
   .container {
     padding-right: 2.5rem;
     padding-left: 2.5rem;
-  }
-
-  .reducir_imagen {
-    width: 13rem;
   }
 }
 

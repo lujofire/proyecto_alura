@@ -5,6 +5,8 @@ import salsas1 from '../assets/img/salsas2.jpg';
 import { useState, useEffect } from 'react'
 import { Link } from "react-router-dom"
 import { buscar } from "../api/api";
+import { AiOutlineLeftCircle } from "react-icons/ai";
+
 
 
 const Sasson = () => {
@@ -16,6 +18,7 @@ const Sasson = () => {
         <h2 className="title-page">SASSON</h2>
       </div>
     </main>
+    
       <section className='colaboradores equipo'>
     <div className="colaborador">
         <div className="encabezado">
@@ -30,7 +33,9 @@ const Sasson = () => {
     </div>
 
     <div className="colaborador">
+    
         <div className="encabezado">
+       
             <Link to="/salsas">
             <img className='logos' src={salsas1}  alt={"Salsas"} />
             </Link>
@@ -40,7 +45,15 @@ const Sasson = () => {
             <h5>{"DAMOS SABOR A TU VIDA"}</h5>
         </div>
     </div>
+    <div className='regresar'>
+            <Link to="/" >
+            <AiOutlineLeftCircle 
+                 className='margen_flecha'
+            />
+            </Link>
+    </div>
     </section>
+    
     
     </>
 }
