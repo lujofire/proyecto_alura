@@ -1,14 +1,33 @@
+import { Link } from "react-router-dom"
 
-
-const Cashitas = () => {
-    return (
-      <main>
-        <div className="container">
-          <h2 className="title-page">CASHITAS</h2>
-        </div>
-        
-      </main>
-    )
-  }
+const Cashitas = (props) => {
+  const { area, descripcion, foto, id } = props.datos
+console.log(" ARRAY", props.datos)
+  return <>
   
-  export default Cashitas
+
+    <section className='colaboradores equipo'>
+      <div className="colaborador">
+      <h2 className="title-page">{area}</h2>
+        <div className="encabezado">
+          <Link to="/aceitunas" >
+            <img className='logos' src={foto} alt={area} />
+          </Link>
+        </div>
+        <div className="info">
+          <h4>{area}</h4>
+          <h5>{descripcion}</h5>
+        </div>
+      </div>
+    </section>
+
+
+
+
+  </>
+
+
+
+}
+
+export default Cashitas
