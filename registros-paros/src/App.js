@@ -22,33 +22,33 @@ function App() {
   const [produccion, setProduccion] = useState([{
     
     id: uuid(),
-    foto: "https://github.com/harlandlohora.png",
+    foto: "frascos",
     area: "FRASCOS",
-    descripcion: "Instructor"
+    descripcion: "Poner un descripcion"
   },
   {
     id: uuid(),
-    foto: "https://github.com/genesysaluralatam.png",
+    foto: "salsas",
     area: "SALSAS",
-    descripcion: "Desarrolladora de software e instructora"
+    descripcion: "Poner un descripcion"
   },
   {
     id: uuid(),
-    foto: "https://github.com/JeanmarieAluraLatam.png",
+    foto: "aceitunas",
     area: "ACEITUNAS",
-    descripcion: "Instructora en Alura Latam"
+    descripcion: "Poner un descripcion"
   },
   { 
     id: uuid(),
-    foto: "https://github.com/christianpva.png",
+    foto: "masipack",
     area: "MASIPACK",
-    descripcion: "Head de Alura e Instructor"
+    descripcion: "Poner un descripcion"
   },
   {
     id: uuid(),
-    foto: "https://github.com/JoseDarioGonzalezCha.png",
+    foto: "frituras",
     area: "FRITURAS",
-    descripcion: "Dev FullStack"
+    descripcion: "Poner un descripcion"
   }])
 
   const [areas, setAreas] = useState ([
