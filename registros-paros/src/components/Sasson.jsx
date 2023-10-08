@@ -1,11 +1,9 @@
-import { getValue } from '@testing-library/user-event/dist/utils';
 import '../assets/css/componentes/area.css';
 import frasos from '../assets/img/frascos3.jpg';
 import salsas1 from '../assets/img/salsas2.jpg';
 import aceituna from '../assets/img/aceituna1.jpg';
 import sobre1 from '../assets/img/sobres1.jpg';
 import sobre2 from '../assets/img/sp2.jpg';
-import { useState, useEffect } from 'react'
 import { Link } from "react-router-dom"
 import { AiOutlineLeftCircle } from "react-icons/ai";
 

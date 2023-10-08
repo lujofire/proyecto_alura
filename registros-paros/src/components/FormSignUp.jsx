@@ -1,0 +1,253 @@
+import { useState } from "react"
+import Button from "@mui/material/Button"
+import TextField from "@mui/material/TextField"
+import * as React from 'react';
+import { useTheme } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import Chip from '@mui/material/Chip';
+
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+	PaperProps: {
+		style: {
+			maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+			width: 250,
+		},
+	},
+};
+
+const names = [
+	'1. Calibración de máquina',
+	'2. Inicio de Op',
+	'3. Cambio de bobina/ribbon/fechador',
+	'4. Lavado de máquina',
+	'5. Desinfección de Equipo',
+	'6. Limpieza de área/máquina/equipos cambios de op',
+	'Miriam Wagner',
+	'Bradley Wilkerson',
+	'Virginia Andrews',
+	'Kelly Snyder',
+];
+
+function getStyles(name, personName, theme) {
+	return {
+		fontWeight:
+			personName.indexOf(name) === -1
+				? theme.typography.fontWeightRegular
+				: theme.typography.fontWeightMedium,
+	};
+}
+
+
+function FormSignUp({ handleSubmit }) {
+	const [paro, setParo] = useState('')
+	const [orden, setOrden] = useState("")
+	const [ptc, setPtc] = useState("")
+	const [planificado, setPlanificado] = useState("")
+	const [produccion, setProduccion] = useState("")
+	const [hora_inicio, setInicio] = useState("")
+	const [hora_fin, setFin] = useState("")
+
+
+
+
+	const theme = useTheme();
+	const [personName, setPersonName] = useState([]);
+
+	const handleChange = (event) => {
+		const {
+			target: { value },
+		} = event;
+		setPersonName(
+			// On autofill we get a stringified value.
+			typeof value === 'string' ? value.split(',') : value,
+		);
+	}
+
+
+
+
+	const [errors, setErrors] = useState({
+		name: {
+			error: false,
+			message:
+				"Deben ser al menos 3 caracteres",
+		},
+	})
+
+	function validarOrden(orden) {
+		if (orden.length >= 5) {
+			return {
+				name: {
+					error: false,
+					message: "",
+				},
+			}
+		} else {
+			return {
+				name: {
+					error: true,
+					message:
+						"Deben ser al menos 5 numeros",
+				},
+			}
+		}
+	}
+
+	return (
+		<form
+			onSubmit={(e) => {
+				e.preventDefault()
+				handleSubmit({
+					orden,
+					ptc,
+					planificado,
+					produccion,
+					hora_inicio,
+					hora_fin,
+
+
+				})
+			}}
+		>
+			<TextField
+				required
+				className="color_input"
+				id="orden"
+				label="No. OP"
+				variant="outlined"
+				fullWidth
+				margin="normal"
+				onChange={(e) =>
+					setOrden(e.target.value)
+				}
+				value={orden}
+				error={errors.name.error}
+				helperText={
+					errors.name.error
+						? errors.name.message
+						: ""
+				}
+				onBlur={(e) => {
+					setErrors(
+						validarOrden(
+							e.target.value
+						)
+					)
+				}}
+			/>
+			<TextField
+				required
+				className="color_input"
+				id="ptc"
+				label="PTC"
+				variant="outlined"
+				fullWidth
+				margin="normal"
+				value={ptc}
+				onChange={(e) =>
+					setPtc(e.target.value)
+				}
+			/>
+			<TextField
+				required
+				className="color_input"
+				id="planificado"
+				label="Producción Planificada"
+				variant="outlined"
+				fullWidth
+				margin="normal"
+				value={planificado}
+				onChange={(e) =>
+					setPlanificado(e.target.value)
+				}
+			/>
+
+			<TextField
+				required
+				className="color_input"
+				id="produccion"
+				label="Producción Total"
+				variant="outlined"
+				fullWidth
+				margin="normal"
+				value={produccion}
+				onChange={(e) =>
+					setProduccion(e.target.value)
+				}
+			/>
+
+			<TextField
+				required
+				className="color_input"
+				id="hora_inicio"
+				label="Hora Inicio"
+				variant="outlined"
+				fullWidth
+				margin="normal"
+				value={hora_inicio}
+				onChange={(e) =>
+					setInicio(e.target.value)
+				}
+			/>
+
+			<TextField
+				required
+				className="color_input"
+				id="hora_fin"
+				label="Hora Fin"
+				variant="outlined"
+				fullWidth
+				margin="normal"
+				value={hora_fin}
+				onChange={(e) =>
+					setFin(e.target.value)
+				}
+			/>
+			<div className="margen_boton">
+				<FormControl fullWidth>
+					<InputLabel id="demo-multiple-name-label">Lista de Paros</InputLabel>
+					<Select
+						className="color_input"
+						labelId="demo-multiple-name-label"
+						id="demo-multiple-name"
+						multiple
+						value={personName}
+						onChange={handleChange}
+						input={<OutlinedInput label="Lista de Paaros" />}
+						MenuProps={MenuProps}
+					>
+						{names.map((name) => (
+							<MenuItem
+								key={name}
+								value={name}
+								style={getStyles(name, personName, theme)}
+							>
+								{name}
+							</MenuItem>
+						))}
+					</Select>
+				</FormControl>
+			</div>
+			<div className="margen_boton">
+				<Button
+					className="margen_boton"
+					variant="contained"
+					type="submit"
+				>
+					Guardar
+				</Button>
+			</div>
+		</form >
+	)
+}
+
+
+export default FormSignUp
+
