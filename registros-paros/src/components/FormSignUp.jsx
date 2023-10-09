@@ -2,14 +2,11 @@ import { useState } from "react"
 import Button from "@mui/material/Button"
 import TextField from "@mui/material/TextField"
 import * as React from 'react';
-import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import OutlinedInput from '@mui/material/OutlinedInput';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import Chip from '@mui/material/Chip';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -22,27 +19,6 @@ const MenuProps = {
 	},
 };
 
-const names = [
-	'1. Calibración de máquina',
-	'2. Inicio de Op',
-	'3. Cambio de bobina/ribbon/fechador',
-	'4. Lavado de máquina',
-	'5. Desinfección de Equipo',
-	'6. Limpieza de área/máquina/equipos cambios de op',
-	'Miriam Wagner',
-	'Bradley Wilkerson',
-	'Virginia Andrews',
-	'Kelly Snyder',
-];
-
-function getStyles(name, personName, theme) {
-	return {
-		fontWeight:
-			personName.indexOf(name) === -1
-				? theme.typography.fontWeightRegular
-				: theme.typography.fontWeightMedium,
-	};
-}
 
 
 function FormSignUp({ handleSubmit }) {
@@ -53,26 +29,6 @@ function FormSignUp({ handleSubmit }) {
 	const [produccion, setProduccion] = useState("")
 	const [hora_inicio, setInicio] = useState("")
 	const [hora_fin, setFin] = useState("")
-
-
-
-
-	const theme = useTheme();
-	const [personName, setPersonName] = useState([]);
-
-	const handleChange = (event) => {
-		const {
-			target: { value },
-		} = event;
-		setPersonName(
-			// On autofill we get a stringified value.
-			typeof value === 'string' ? value.split(',') : value,
-		);
-	}
-
-
-
-
 	const [errors, setErrors] = useState({
 		name: {
 			error: false,
@@ -111,7 +67,7 @@ function FormSignUp({ handleSubmit }) {
 					produccion,
 					hora_inicio,
 					hora_fin,
-
+					paro
 
 				})
 			}}
@@ -211,29 +167,35 @@ function FormSignUp({ handleSubmit }) {
 				}
 			/>
 			<div className="margen_boton">
-				<FormControl fullWidth>
-					<InputLabel id="demo-multiple-name-label">Lista de Paros</InputLabel>
-					<Select
-						className="color_input"
-						labelId="demo-multiple-name-label"
-						id="demo-multiple-name"
-						multiple
-						value={personName}
-						onChange={handleChange}
-						input={<OutlinedInput label="Lista de Paaros" />}
-						MenuProps={MenuProps}
-					>
-						{names.map((name) => (
-							<MenuItem
-								key={name}
-								value={name}
-								style={getStyles(name, personName, theme)}
-							>
-								{name}
-							</MenuItem>
-						))}
-					</Select>
-				</FormControl>
+				<Box sx={{ minWidth: 120 }}>
+					<FormControl fullWidth>
+						<InputLabel id="demo-simple-select-label">Lista de Paros</InputLabel>
+						<Select
+							className="color_input"
+							labelId="demo-simple-select-label"
+							id="demo-simple-select"
+							value={paro}
+							label="Lista de Paros"
+							onChange={(e) =>
+								setParo(e.target.value)
+							}
+							MenuProps={MenuProps}
+						>
+							<MenuItem value={1}>1. Calibración de máquina</MenuItem>
+							<MenuItem value={2}>2. Inicio de Op</MenuItem>
+							<MenuItem value={3}>3. Cambio de bobina/ribbon/fechador</MenuItem>
+							<MenuItem value={4}>4. Lavado de máquina</MenuItem>
+							<MenuItem value={5}>5. Desinfección de Equipo</MenuItem>
+							<MenuItem value={6}>6. Limpieza de área/máquina/equipos cambios de op</MenuItem>
+							<MenuItem value={7}>7. Limpieza de Mordaza/cuchilla/dosificador</MenuItem>
+							<MenuItem value={8}>8. Tiempo de Comida</MenuItem>
+							<MenuItem value={9}>9. Reunión</MenuItem>
+							<MenuItem value={10}>10. Lavado de manos</MenuItem>
+							<MenuItem value={11}>11. Pruebas en máquina/pruebas en pp</MenuItem>
+							<MenuItem value={12}>12. Sin programación de Producción</MenuItem>
+						</Select>
+					</FormControl>
+				</Box>
 			</div>
 			<div className="margen_boton">
 				<Button

@@ -56,7 +56,7 @@ const Sasson = () => {
             </div>
             <div className="colaborador">
                 <div className="encabezado">
-                    <Link to="/salsas">
+                    <Link to="/sobres1">
                         <img className='logos' src={sobre1} alt={"SP1"} />
                     </Link>
                 </div>
@@ -67,7 +67,7 @@ const Sasson = () => {
             </div>
             <div className="colaborador">
                 <div className="encabezado">
-                    <Link to="/salsas">
+                    <Link to="/sobres2">
                         <img className='logos' src={sobre2} alt={"SP2"} />
                     </Link>
                 </div>
@@ -78,7 +78,7 @@ const Sasson = () => {
             </div>
             <div className="colaborador">
                 <div className="encabezado">
-                    <Link to="/salsas">
+                    <Link to="/relleno">
                         <img className='logos' src={salsas1} alt={"RELLENO"} />
                     </Link>
                 </div>

@@ -14,7 +14,7 @@ const Salsas = () => {
   return <>
     <main>
       <div className="container">
-        <h2 className="title-page">Linea de Frascos</h2>
+        <h2 className="title-page">Salsas y Aderezos</h2>
       </div>
     </main>
     <section className='colaboradores equipo'>
