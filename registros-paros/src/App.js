@@ -16,6 +16,7 @@ import Frascos from './rutas/Frascos';
 import Salsas from './rutas/Salsas';
 import { useState } from 'react';
 import { v4 as uuid } from "uuid";
+import HojaDeParos from './components/HojaDeParos';
 
 
 function App() {
@@ -111,6 +112,7 @@ function App() {
       />
       <Route path='/frascos' element={<Frascos />} />
       <Route path='/salsas' element={<Salsas />} />
+      <Route path='/hojaparos' element={<HojaDeParos />} />
       <Route path='*' element={<Page404 />} />
       </Routes>
       <Navbar />

@@ -7,6 +7,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import { Link } from "react-router-dom"
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -21,7 +22,10 @@ const MenuProps = {
 
 
 
+
+
 function FormSignUp({ handleSubmit }) {
+	const [fecha, setFecha] = useState('')
 	const [paro, setParo] = useState('')
 	const [orden, setOrden] = useState("")
 	const [ptc, setPtc] = useState("")
@@ -61,17 +65,34 @@ function FormSignUp({ handleSubmit }) {
 			onSubmit={(e) => {
 				e.preventDefault()
 				handleSubmit({
+					fecha,
 					orden,
 					ptc,
 					planificado,
 					produccion,
 					hora_inicio,
 					hora_fin,
-					paro
+					paro,
 
 				})
-			}}
+			} 
+		}
 		>
+			<TextField
+				required
+				className="color_input"
+				type="date"
+				id="fecha"
+				label=""
+				variant="outlined"
+				fullWidth
+				margin="normal"
+				value={fecha}
+				onChange={(e) =>
+					setFecha(e.target.value)
+				}
+			/>
+
 			<TextField
 				required
 				className="color_input"
@@ -112,7 +133,6 @@ function FormSignUp({ handleSubmit }) {
 				}
 			/>
 			<TextField
-				required
 				className="color_input"
 				id="planificado"
 				label="Producción Planificada"
@@ -126,7 +146,6 @@ function FormSignUp({ handleSubmit }) {
 			/>
 
 			<TextField
-				required
 				className="color_input"
 				id="produccion"
 				label="Producción Total"
@@ -197,7 +216,7 @@ function FormSignUp({ handleSubmit }) {
 					</FormControl>
 				</Box>
 			</div>
-			<div className="margen_boton">
+			<div className="margen_boton boton">
 				<Button
 					className="margen_boton"
 					variant="contained"
@@ -205,6 +224,18 @@ function FormSignUp({ handleSubmit }) {
 				>
 					Guardar
 				</Button>
+				
+
+				<Link to="/hojaparos">
+					<Button
+						className="margen_boton"
+						variant="contained"
+						type="submit"
+					>
+						ver Registros
+					</Button>
+				</Link>
+
 			</div>
 		</form >
 	)
