@@ -83,7 +83,7 @@ function FormSignUp({ handleSubmit }) {
 				className="color_input"
 				type="date"
 				id="fecha"
-				label=""
+				label="Fecha"
 				variant="outlined"
 				fullWidth
 				margin="normal"
