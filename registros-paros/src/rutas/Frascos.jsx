@@ -6,19 +6,19 @@ import Typography from '@mui/material/Typography'
 import '../App.css'
 
 
-let frascos="Linea de Frascos";
 
+
+let frascos="Linea de Frascos";
 
 const Frascos = () => {
 
   const handleSubmit = (valores) => {
-        
-       console.log('orden: ', valores)
-       alert("El paro No. "+ valores.paro+ "  fue ingresado con éxito" )
+    localStorage.setItem("datos", JSON.stringify(valores));
 
-  
+    console.log('orden: ', valores)
+    alert("El paro No. "+  valores.paro + "  fue ingresado con éxito" )
+   
   }
-  
 
   return <>
  

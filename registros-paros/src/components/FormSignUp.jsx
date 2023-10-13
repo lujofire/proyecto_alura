@@ -21,10 +21,21 @@ const MenuProps = {
 };
 
 
-
-
+let frascos= "frascos";
+let salsas= "salsas";
+let aceitunas ="aceitunas";
+let sobres1 = "sobre1";
+let sobres2 = "sobre2";
+let relleno = "relleno";
+let famensal  = "famensal";
+let mezclador500 = "mezclador500";
+let mezclador200 = "mezclador200";
+let mezclador100 = "mezclador100";
+let pulverizador = "pulverizador";
+let molinos = "molinos"
 
 function FormSignUp({ handleSubmit }) {
+	const [area, setArea] = useState('')
 	const [fecha, setFecha] = useState('')
 	const [paro, setParo] = useState('')
 	const [orden, setOrden] = useState("")
@@ -73,11 +84,44 @@ function FormSignUp({ handleSubmit }) {
 					hora_inicio,
 					hora_fin,
 					paro,
+					area
 
 				})
 			} 
 		}
 		>
+			<div className="margen_boton">
+				<Box sx={{ minWidth: 120 }}>
+					<FormControl fullWidth>
+						<InputLabel>Area Productiva</InputLabel>
+						<Select
+							className="color_input"
+							labelId="demo-simple-select-label"
+							id="area"
+							value={area}
+							label="Area Productiva"
+							onChange={(e) =>
+								setArea(e.target.value)
+							}
+							MenuProps={MenuProps}
+						>
+							<MenuItem value={frascos}>FRASCOS</MenuItem>
+							<MenuItem value={salsas}>SALSAS Y ADEREZOS</MenuItem>
+							<MenuItem value={aceitunas}>ACEITUNAS</MenuItem>
+							<MenuItem value={sobres1}>SOBRE PEQUEÑO 1</MenuItem>
+							<MenuItem value={sobres2}>SOBRE PEQUEÑO 2</MenuItem>
+							<MenuItem value={relleno}>SOBRRE RELLENO</MenuItem>
+							<MenuItem value={famensal}>FAMENSAL 1</MenuItem>
+							<MenuItem value={mezclador500}>MEZCLADOR 100</MenuItem>
+							<MenuItem value={mezclador200}>MEZCLADOR 200</MenuItem>
+							<MenuItem value={mezclador100}>MEZCLADOR 500</MenuItem>
+							<MenuItem value={pulverizador}>PULVERIZADOR</MenuItem>
+							<MenuItem value={molinos}>MOLINOS</MenuItem>
+						</Select>
+					</FormControl>
+				</Box>
+			</div>
+
 			<TextField
 				required
 				className="color_input"
