@@ -24,7 +24,7 @@ const Frascos = () => {
     
     console.log("obtener data",localStorage.getItem("datos"))
     localStorage.setItem("datos", JSON.stringify(arreglofrascos));
-    arreglofrascos = JSON.parse(localStorage.getItem("datos"))
+   arreglofrascos = JSON.parse(localStorage.getItem("datos"))
 
     arreglofrascos.map(x=> console.log(x.orden))
 

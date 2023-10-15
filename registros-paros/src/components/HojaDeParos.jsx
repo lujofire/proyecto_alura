@@ -40,15 +40,15 @@ console.log("minutos",calculo)
       <table className="table">
         <tbody>
         <tr className="tr">
-          <th className="color_input">AREA</th>
-          <th className="th">FECHA DE PRODUCCION</th>
-          <th className="th">NO. ORDEN</th>
-          <th className="th">PTC</th>
-          <th className="th">PRODUCCION PLANIFICADA</th>
-          <th className="th">PRODUCCION TOTAL</th>
-          <th className="th">HORA INCIO</th>
-          <th className="th">HORA INCIO</th>
-          <th className="th">No. DE PARO</th>
+          <th className="th color_input">AREA</th>
+          <th className="th color_input">FECHA DE PRODUCCION</th>
+          <th className="th color_input">NO. ORDEN</th>
+          <th className="th color_input">PTC</th>
+          <th className="th color_input">PRODUCCION PLANIFICADA</th>
+          <th className="th color_input">PRODUCCION TOTAL</th>
+          <th className="th color_input">HORA INCIO</th>
+          <th className="th color_input">HORA INCIO</th>
+          <th className="th color_input">No. DE PARO</th>
         </tr>
         <tr className="tr">
           <td className="td">{datos.map((dato, index) => <p key={index}>{dato.area}</p>)}</td>
