@@ -87,13 +87,14 @@ function FormSignUp({ handleSubmit }) {
 					area
 
 				})
+				
 			} 
 		}
 		>
 			<div className="margen_boton">
-				<Box sx={{ minWidth: 120 }}>
+				<Box  sx={{ minWidth: 120 }}>
 					<FormControl fullWidth>
-						<InputLabel>Area Productiva</InputLabel>
+						<InputLabel required>Area Productiva</InputLabel>
 						<Select
 							className="color_input"
 							labelId="demo-simple-select-label"

@@ -8,17 +8,30 @@ import '../App.css'
 
 
 
+
 let frascos="Linea de Frascos";
 
 const Frascos = () => {
+  let arreglofrascos = JSON.parse(localStorage.getItem("datos"))
+  
 
   const handleSubmit = (valores) => {
-    localStorage.setItem("datos", JSON.stringify(valores));
+   console.log("arreglo inicio", arreglofrascos.length)
+   arreglofrascos.push(valores);
 
-    console.log('orden: ', valores)
-    alert("El paro No. "+  valores.paro + "  fue ingresado con éxito" )
-   
+   console.log('arreglo fin ', arreglofrascos.length)
+    //alert("El paro No. "+  valores.paro + "  fue ingresado con éxito" )
+    
+    console.log("obtener data",localStorage.getItem("datos"))
+    localStorage.setItem("datos", JSON.stringify(arreglofrascos));
+
+    arreglofrascos.map(x=> console.log(x.orden))
+
+
   }
+
+  
+
 
   return <>
  
