@@ -1,4 +1,3 @@
-import { Button } from "@mui/material";
 import { AiOutlineLeftCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
@@ -49,7 +48,7 @@ console.log("minutos",calculo)
           <th className="th">PRODUCCION TOTAL</th>
           <th className="th">HORA INCIO</th>
           <th className="th">HORA INCIO</th>
-          <th className="th">MINUTOS CONSUMIDOS</th>
+          <th className="th">No. DE PARO</th>
         </tr>
         <tr className="tr">
           <td className="td">{datos.map((dato, index) => <p key={index}>{dato.area}</p>)}</td>
@@ -60,6 +59,7 @@ console.log("minutos",calculo)
           <td className="td">{datos.map((dato, index) => <p key={index}>{dato.produccion}</p>)}</td>
           <td className="td">{datos.map((dato, index) => <p key={index}>{dato.hora_inicio}</p>)}</td>
           <td className="td">{datos.map((dato, index) => <p key={index}>{dato.hora_fin}</p>)}</td>
+          <td className="td">{datos.map((dato, index) => <p key={index}>{dato.paro}</p>)}</td>
          
         </tr>
         </tbody>
